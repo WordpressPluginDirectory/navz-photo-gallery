@@ -1,11 +1,11 @@
 ﻿=== ACF Photo Gallery Field ===
 Contributors: navzme
 Donate link: https://www.buymeacoffee.com/navzme
-Tags: acf, advanced, custom, fields, photo, gallery, album, fancybox, litebox, lightbox
+Tags: acf, custom, fields, photo, gallery
 Requires at least: 5.8
-Tested up to: 6.3
+Tested up to: 6.5
 Requires PHP: 7.0
-Stable tag: 2.5
+Stable tag: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,11 +20,12 @@ A lightweight extension of Advanced Custom Field (ACF) that adds **Photo Gallery
 * Easily load data through a simple and friendly API
 * Uses the native WordPress custom post type for ease of use and fast processing
 * Uses the native WordPress metadata for ease of use and fast processing
-* Supports Elementor
+* Supports WordPress classic and Gutenberg editor
+* Supports Elementor (support for bricks builder coming soon)
 * RESTFul API
 
 = Note =
-This plugin is alternative of ACF Gallery Pro. You need to have knowledge of coding because you’ll be required to edit your WordPress theme source code. If you are looking for shortcodes and prebuilt gallery then this plugin is **NOT** for you. This plugin will give you PHP array of images and you’ll need to make the gallery layout as you wish.
+This plugin is a better alternative to ACF Gallery Pro. You need to have knowledge of coding because editing your WordPress theme source code is required. If you're looking for prebuilt galleries and shortcodes, then this plugin is NOT for you. This plugin will give you a PHP array of images, and you'll need to create the gallery layout yourself.
 
 = Donation =
 Navneil Naicker is the sole developer working on this free WordPress Plugin in his leisure time. He would like to integrate it with premium plugins like Elementor Pro and Advanced Custom Fields Pro. Please donate to support Navneil in continuing further development of this plugin. Click on the link “<https://www.buymeacoffee.com/navzme>” to donate.
@@ -68,7 +69,7 @@ The following example is using Twitter Bootstrap framework to layout. You can us
 To add extra fields add the following to your themes functions.php file.
 
 `//Create extra fields called Altnative Text and Status
-function my_extra_gallery_fields( $args, $attachment_id, $field ){
+function my_extra_gallery_fields( $args, $attachment_id, $acf_key ){
     $args['alt'] = array(
 		'type' => 'text', 
 		'label' => 'Altnative Text', 
@@ -141,6 +142,21 @@ From your WordPress dashboard
 4. **Watch** the tutorial to [get started](https://www.youtube.com/watch?v=c7u9FwVLe9Q)
 
 == Changelog ==
+=3.0=
+* [Fixed] URL and target not saving into the database.
+
+=2.9=
+* [Fixed] On image edit, popup modal not accessible on Gutenberg editor.
+
+=2.8=
+* [Fixed] Undefined array key "nonce".
+
+=2.7=
+* [Fixed] Tidy up few things.
+
+=2.6=
+* [Fixed] When click on "Add Images", WordPress media library not opening.
+
 =2.5=
 * [Fixed] Elementor dynamic tag offset index
 * [Added] fallback for Elementor dynamic tag for versions prior to 3.16
